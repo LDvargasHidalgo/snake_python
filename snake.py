@@ -27,7 +27,7 @@ class Snake:
             
     
     def add_segment(self, position):
-        snake_segment = Turtle("square")
+        snake_segment = Turtle("circle")
         snake_segment.color("yellow")
         snake_segment.penup() #quitar  la linea del centro 
         snake_segment.goto(position)

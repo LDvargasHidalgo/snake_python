@@ -7,7 +7,7 @@ class Scoreboard(Turtle):
     def __init__ (self):
         super().__init__()
         self.score = 0  #Atributo caracteristicas de los metodos y los metodos son las acciones
-        self.goto(0,270)
+        self.goto(-220,268)
         self.color("white")
         self.update_score()
         self.hideturtle()
@@ -23,7 +23,7 @@ class Scoreboard(Turtle):
         
     def game_over(self):
         self.goto(0,0)
-        self.write("¡GAME OVER =(  ",font=FONT, align=ALIGN)
+        self.write("¡GAME OVER ! ",font=FONT, align=ALIGN)
         
         
         
