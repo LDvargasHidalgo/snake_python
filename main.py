@@ -1,4 +1,5 @@
 from turtle import Screen
+from scoreboard import Scoreboard
 from snake import Snake
 from food import Food
 
@@ -18,6 +19,9 @@ snake = Snake()
 #instanciar el objeto comida
 food = Food()
 
+#instanciar el objeto tablero de puntos
+scoreboard = Scoreboard()
+
 #movimientos serpiente
 screen.listen()
 screen.onkey(snake.up, "Up")
@@ -34,5 +38,26 @@ while game_is_on:
    
    snake.move()
    
+   #detectar la colisión con la comida
+   if snake.head.distance(food) < 15:
+      food.refresh()
+      scoreboard.increase_score()
+      snake.extend()
+   
+   #Detectar la colisión con las paredes
+   if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280 :
+      game_is_on = False
+      scoreboard.game_over()
+      
+   #Detectar la colisión de la cola
+   for segment in snake.segments:
+      if segment == snake.head:
+         pass
+      elif snake.head.distance(segment) < 10:
+          game_is_on = False
+          scoreboard.game_over()
+   
    #final
 screen.exitonclick() #mantiene nuestra ventana abierta
+
+#xcor => nos da la cordenada actual de la cabeza de la serpiente

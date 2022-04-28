@@ -23,11 +23,20 @@ class Snake:
 
     def create_snake(self):
         for position in STARTING_POSITIONS:
-            snake_segment = Turtle("square")
-            snake_segment.color("yellow")
-            snake_segment.penup() #quitar  la linea del centro 
-            snake_segment.goto(position)
-            self.segments.append(snake_segment)
+            self.add_segment(position)
+            
+    
+    def add_segment(self, position):
+        snake_segment = Turtle("square")
+        snake_segment.color("yellow")
+        snake_segment.penup() #quitar  la linea del centro 
+        snake_segment.goto(position)
+        self.segments.append(snake_segment)
+        
+    def extend(self):
+        self.add_segment(self.segments[-1].position())
+          
+            
 
     #este for solo funciona para ir hacia adelante   
     #aqui se define el moviemiento de la serpiente 
