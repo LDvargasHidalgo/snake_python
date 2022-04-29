@@ -1,0 +1,10 @@
+# SNAKE
+
+https://user-images.githubusercontent.com/91891348/165868686-277fb2e9-37c8-4c55-88d6-34d810a9c6e8.mp4
+
+# TECNOLOGIAS 
+* PYTHON
+* TKINTER
+* TURTLE
+* RANDOM
+* FORWARD
